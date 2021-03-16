@@ -1,8 +1,9 @@
-#Ejercicio 1
-#Una vez que ya tenemos todo configurado y tenemos que empezar a trabajar con el código, ¿qué mejor forma de empezar a
-#“picar código” que con un “Hello World”? El primer ejercicio consiste en utilizar una imagen docker cualquiera y
-#que cuando se ejecute Cloud Build muestre como resultado las palabras “hello World”.
-
 steps:
   - name: 'ubuntu'
-    args: ['bash', '-c', 'echo hello world']
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+       echo hello world
+       apt install nodejs
+    
